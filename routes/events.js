@@ -3,8 +3,11 @@ const router = express.Router()
 
 const queries = require("../db/queries")
 
-app.get('/', (req,res,next) => {  
-    res.json({
-         message: 'Hello World!'
-    }); 
- })
+router.get('/', (req,res,next) => {  
+    queries.list('events')
+    .then(event => {
+        res.json({event})
+    })
+})
+
+ module.exports = router

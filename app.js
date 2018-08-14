@@ -9,7 +9,7 @@ const events = require("./routes/events")
 app.use(cors())
 app.use(bodyParser.json())
 
-app.use("/events",events)
+app.use("/",events)
 
 
 app.listen(port, () => {
