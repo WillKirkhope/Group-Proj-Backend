@@ -20,7 +20,7 @@ module.exports = {
         .returning('*')
         .then(record => record[0])
     },
-    delete(tableName) {
+    deleteOne(tableName, id) {
       return database(tableName)
         .delete()
         .where('id', id)

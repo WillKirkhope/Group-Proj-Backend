@@ -11,7 +11,7 @@ router.get('/', (req,res,next) => {
 })
 
 router.get('/:id', function(request,response){
-  queries.read(request.params.id).then(event => {
+  queries.read("events", request.params.id).then(event => {
       event
           ? response.json({event})
           : response.status(404).json({message: 'Not found'})
@@ -19,21 +19,21 @@ router.get('/:id', function(request,response){
 })
 
 router.post('/', function(request,response,next){
-  queries.post(request.params.body)
+  queries.post("events", request.body)
   .then(newEvent => {
     response.status(201).json({newEvent})
   })
 })
 
 router.put('/:id', function(request,response,next){
-  queries.update(request.body.id, request.body.name)
-  .then(updatedEvent => response.json({updatedEvent}))
+  queries.update("events", request.params.id, request.body)
+  .then(updatedEvent => response.json(updatedEvent))
 })
 
 router.delete('/:id', function(request,response,next){
-  queries.deleteOne(request.params.id)
+  queries.deleteOne("events", request.params.id)
   .then(() => {
-    response.status(200)
+    response.status(204).json()
   })
 })
 
