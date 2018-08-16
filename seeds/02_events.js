@@ -24,6 +24,6 @@ exports.seed = function(knex, Promise) {
         long: -105.064446,
         description: "Lots of dog scat up in here--too much!"
       }
-      ]);
-    });
+    ]);
+  });
 };
