@@ -1,5 +1,6 @@
 ## Directions ##
 
+
 - Our Database has two separate routes with a third on the way in a future implementation.
 - Our first path is 'https://openvillage.herokuapp.com/events' this gives you access to all of our current and upcoming event data!
 - Our second Path is 'https://openvillage.herokuapp.com/neighbors' this give you access to all of our user data, new users will be stored here.
